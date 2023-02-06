@@ -1,44 +1,26 @@
-import Title from "./Title"
+import { services } from '../Data'
+import Title from './Title'
 
 const Services = () => {
   return (
     <section className="section services" id="services">
-      <div className="section-title">
-        <Title title="Our" subtitle="Services" />
+      <div className='section-title'>
+        <Title title="our" subtitle="services" />
       </div>
       <div className="section-center services-center">
-        <article className="service">
-          <span className="service-icon"><i className="fas fa-wallet fa-fw"></i></span>
-          <div className="service-info">
-            <h4 className="service-title">saving money</h4>
-            <p className="service-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores, officia.
-            </p>
-          </div>
-        </article>
-
-        <article className="service">
-          <span className="service-icon"><i className="fas fa-tree fa-fw"></i></span>
-          <div className="service-info">
-            <h4 className="service-title">endless hiking</h4>
-            <p className="service-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores, officia.
-            </p>
-          </div>
-        </article>
-
-        <article className="service">
-          <span className="service-icon"><i className="fas fa-socks fa-fw"></i></span>
-          <div className="service-info">
-            <h4 className="service-title">amazing comfort</h4>
-            <p className="service-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores, officia.
-            </p>
-          </div>
-        </article>
+        {services.map((services) => {
+          return (
+            <article className="service">
+              <span className="service-icon">
+                <i className={services.icon}></i>
+              </span>
+              <div className="service-info">
+                <h4 className="service-title">{services.title}</h4>
+                <p className="service-text">{services.text}</p>
+              </div>
+            </article>
+          )
+        })}
       </div>
     </section>
   )
