@@ -24,9 +24,10 @@ const NavBar = () => {
 
         <ul className="nav-icons">
           {socialLinks.map((soLink) => {
+            const { href, className, target } = soLink
             return (
               <li>
-                <a href={soLink.href} className={soLink.className} target={soLink.target}></a>
+                <a href={href} className={className} target={target}> </a>
               </li>
             )
           })}
